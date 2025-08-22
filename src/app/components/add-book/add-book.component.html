@@ -1,0 +1,52 @@
+
+<div class="add-book-container">
+  <div class="form-heading">
+    <h1 class="title">Add Your Book</h1>
+  </div>
+    <form [formGroup]="AdminForm" (ngSubmit)="onSubmit()">
+      <div class="div1">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Book Name</mat-label>
+        <input formControlName="bookName" matInput type="text" required />
+        <mat-error *ngIf="addBookControl['bookName']?.hasError('required')" >BookName required</mat-error>
+      </mat-form-field>
+ 
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Author</mat-label>
+        <input formControlName="author" matInput type="text" required />
+        <mat-error *ngIf="addBookControl['author']?.hasError('required')" >Author required</mat-error>
+      </mat-form-field>
+     
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Quantity</mat-label>
+        <input formControlName="quantity" matInput type="text" required />
+        <mat-error *ngIf="addBookControl['quantity']?.hasError('required')" >Quantity required</mat-error>
+      </mat-form-field>
+    </div>
+      
+   <div style="display: flex; gap: 3px; " class="div2">
+     
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Price</mat-label>
+        <input formControlName="price" matInput type="number" required />
+      <mat-error *ngIf="addBookControl['price']?.hasError('required')" >Price required</mat-error>
+      </mat-form-field>
+ 
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Discount Price</mat-label>
+        <input formControlName="discountPrice" matInput type="number" required />
+        <mat-error *ngIf="addBookControl['discountPrice']?.hasError('required')" >DiscountPrice required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="div3">
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Description</mat-label>
+      <textarea formControlName="description" matInput required></textarea>
+      <mat-error *ngIf="addBookControl['description']?.hasError('required')" >Description required</mat-error>
+    </mat-form-field>
+  </div>
+      <button style="background-color: #A03037;" mat-raised-button color="primary" type="submit" (click)="onSubmit()">Add Book</button>
+    </form>
+  </div>
+ 

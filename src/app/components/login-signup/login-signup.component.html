@@ -1,0 +1,70 @@
+
+    <!-- <mat-dialog-content> -->
+        <div class="online-book-shopping">
+            <div class="login-panel">
+                <div class="image-container">
+                    <img
+                        src="../../../assets/main-logo.png" height="200px" width="200px">
+                        
+                    <br><br>
+                    <p style="font-size:20px;"><b>ONLINE BOOK SHOPPING</b></p>
+                </div>
+
+                <div class="form">
+                    <mat-tab-group #tabGroup>
+                        <mat-tab label="LOGIN">
+                            <form class="login-signup-body" [formGroup]="loginForm">
+                                <div class="Email">
+                                    <label>Email id</label>
+                                    <mat-form-field appearance="outline">
+                                        <input formControlName="email" matInput>
+                                        
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="password">
+                                    <label>Password</label>
+                                    <mat-form-field appearance="outline">
+                                        <input formControlName="password" matInput type="password">
+                                    </mat-form-field>
+                                </div>
+
+                                <button mat-raised-button (click)="login()"  class="login-btn">Login</button>
+
+                                <button mat-button class="forgot-btn" (click)="forgotPassword()">Forgot Password?</button>
+
+                                <div class="or-separator">OR</div>
+
+                                <div class="btn">
+                                    <button mat-raised-button class="facebook-btn">Facebook</button>
+                                    <button mat-raised-button class="google-btn">Google</button>
+                                </div>
+                            </form>
+                        </mat-tab>
+                        <mat-tab label="SIGNUP">
+                            <form class="login-signup-body" [formGroup]="registerForm">
+                                <label>Full Name</label>
+                                <mat-form-field appearance="outline">
+                                    <input formControlName="fullName" matInput type="text">
+                                </mat-form-field>
+                                <label>Email Id</label>
+                                <mat-form-field appearance="outline">
+                                    <input formControlName="email" matInput type="text">
+                                </mat-form-field>
+                                <label>Password</label>
+                                <mat-form-field appearance="outline">
+                                    <input formControlName="password" matInput type="password">
+                                </mat-form-field>
+                                <label>Mobile Number</label>
+                                <mat-form-field appearance="outline">
+                                    <input formControlName="phone" matInput type="tel">
+                                </mat-form-field>
+                                <button style="width: 100%;background-color:#A03037;color:white; height: 40px;" mat-raised-button (click)="userRegister()">Sign
+                                    Up</button>
+                            </form>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </div>
+        </div>
+    <!-- </mat-dialog-content> -->
